@@ -97,9 +97,9 @@ class Tests: XCTestCase {
     func test_add() {
         do {
             var dogs: [Dog] = []
-            for i in 1...3 {
+            for counter in 1...3 {
                 let obj = Dog()
-                obj.id = "\(i)"
+                obj.id = "\(counter)"
                 obj.name = "Pluto"
                 obj.color = "white"
                 dogs.append(obj)

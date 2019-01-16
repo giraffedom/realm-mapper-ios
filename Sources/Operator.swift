@@ -31,17 +31,6 @@ public func <- <T: Object>(left: inout T?, right: Map) where T: BaseMappable {
 }
 
 /**
- Map to implicitly unwrapped optional BaseMappable Object.
- - parammeter T: BaseMappable Object.
- - parameter left: Implicitly unwrapped optional variable.
- - parameter right: Map object.
- */
-public func <- <T: Object>(left: inout T!, right: Map) where T: BaseMappable {
-    var object: T? = left
-    object <- right
-}
-
-/**
  Map to List of BaseMappable Object.
  - parammeter T: BaseMappable Object.
  - parameter left: mapped variable.
@@ -56,8 +45,8 @@ public func <- <T: Object>(left: List<T>, right: Map) where T: BaseMappable {
         guard let objs = maps else { return }
         left.append(objectsIn: objs)
     } else {
-        var _left = left
-        _left <- (right, ListTransform<T>())
+        var leftX = left
+        leftX <- (right, ListTransform<T>())
     }
 }
 
